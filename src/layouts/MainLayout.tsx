@@ -150,7 +150,7 @@ const MainLayout = ({
             <div>
               <a
                 href="/cv.pdf"
-                download="Agas_CV.pdf"
+                download="Agas_Pratama_CV.pdf"
                 className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
               >
                 <span className="border-b border-transparent group-hover:border-[var(--text-primary)] transition-all">
