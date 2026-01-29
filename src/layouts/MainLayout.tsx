@@ -1,6 +1,6 @@
-import { Link, useLocation, useOutlet } from "react-router-dom"; // Tambah useOutlet
+import { Link, useLocation, useOutlet } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { cloneElement, isValidElement } from "react"; // Tambah ini
+import { cloneElement, isValidElement } from "react";
 
 const MainLayout = ({
   theme,
@@ -10,7 +10,7 @@ const MainLayout = ({
   toggleTheme: () => void;
 }) => {
   const location = useLocation();
-  const element = useOutlet(); // Ambil elemen halaman yg aktif
+  const element = useOutlet();
 
   const menuItems = [
     { path: "/", label: "Index" },
@@ -147,29 +147,58 @@ const MainLayout = ({
               ))}
             </div>
 
-            <div>
-              <a
-                href="/cv.pdf"
-                download="Agas_Pratama_CV.pdf"
-                className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group"
-              >
-                <span className="border-b border-transparent group-hover:border-[var(--text-primary)] transition-all">
-                  Download Resume
-                </span>
-                <svg
-                  className="w-3 h-3 group-hover:translate-y-0.5 transition-transform duration-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+            <div className="pt-4 space-y-3 border-t border-[var(--border-color)] mt-4">
+              <p className="text-[10px] text-[var(--text-secondary)] font-mono uppercase tracking-widest">
+                Downloads CV
+              </p>
+
+              <div className="flex flex-col gap-3">
+                <a
+                  href="/cv-ats.pdf"
+                  download="Agas_CV_ATS.pdf"
+                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group w-fit"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                  />
-                </svg>
-              </a>
+                  <svg
+                    className="w-3 h-3 group-hover:translate-y-0.5 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                  <span className="border-b border-transparent group-hover:border-[var(--text-primary)] transition-all">
+                    Professional (ATS)
+                  </span>
+                </a>
+
+                <a
+                  href="/cv-creative.pdf"
+                  download="Agas_CV_Creative.pdf"
+                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors group w-fit"
+                >
+                  <svg
+                    className="w-3 h-3 group-hover:translate-y-0.5 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span className="border-b border-transparent group-hover:border-[var(--text-primary)] transition-all">
+                    Visual (Creative)
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
